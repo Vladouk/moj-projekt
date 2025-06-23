@@ -10,8 +10,8 @@ Aby uruchomić projekt lokalnie:
 git clone https://github.com/Vladouk/moj-projekt.git
 cd moj-projekt
 
-Użycie
+## Użycie
 Po sklonowaniu repozytorium, otwórz plik index.html w przeglądarce, aby zobaczyć stronę startową.
 
-Licencja
+## Licencja
 Ten projekt jest udostępniany na licencji MIT. Zobacz plik LICENSE, aby uzyskać więcej informacji.
