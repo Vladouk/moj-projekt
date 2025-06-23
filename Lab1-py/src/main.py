@@ -10,7 +10,7 @@ def main():
     if choice == "1":
         print("Uruchamianie programu...")
     elif choice == "2":
-        print("To jest pomoc.")
+        print("To jest zaktualizowana pomoc.")
     elif choice == "3":
         print("Do widzenia!")
     else:
