@@ -1,5 +1,21 @@
+def show_menu():
+    print("=== MENU ===")
+    print("1. Start")
+    print("2. Help")
+    print("3. Exit")
+
 def main():
-    print("Hello world!")
+    show_menu()
+    choice = input("Wybierz opcję: ")
+    if choice == "1":
+        print("Uruchamianie programu...")
+    elif choice == "2":
+        print("To jest pomoc.")
+    elif choice == "3":
+        print("Do widzenia!")
+    else:
+        print("Nieprawidłowy wybór.")
 
 if __name__ == "__main__":
     main()
+
