@@ -1,5 +1,5 @@
 def show_menu():
-    print("=== HEADER A ===")
+    print("=== HEADER A + B ===")
     print("1. Start")
     print("2. Help")
     print("3. Exit")
