@@ -1,7 +1,6 @@
 def show_menu():
     print("=== HEADER A + B ===")
     print("1. Start")
-    print("2. Help")
     print("3. Exit")
     print("4. Info")
 
@@ -10,14 +9,12 @@ def main():
     choice = input("Wybierz opcję: ")
     if choice == "1":
         print("Uruchamianie programu...")
-    elif choice == "2":
-        print("To jest zaktualizowana pomoc.")
     elif choice == "3":
         print("Do widzenia!")
     else:
         print("Nieprawidłowy wybór.")
-elif choice == "4":
-    print("Wersja 1.1 – prosty system menu.")
+    elif choice == "4":
+        print("Wersja 1.1 – prosty system menu.")
 
 
 if __name__ == "__main__":
