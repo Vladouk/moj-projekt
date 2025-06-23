@@ -3,6 +3,7 @@ def show_menu():
     print("1. Start")
     print("2. Help")
     print("3. Exit")
+    print("4. Info")
 
 def main():
     show_menu()
@@ -15,6 +16,9 @@ def main():
         print("Do widzenia!")
     else:
         print("Nieprawidłowy wybór.")
+elif choice == "4":
+    print("Wersja 1.1 – prosty system menu.")
+
 
 if __name__ == "__main__":
     main()
