@@ -1,15 +1,29 @@
-# Railway Deployment with CI/CD
+# moj-projekt
 
-## Deployment Instructions
+## 🛠 Stos technologiczny
+- HTML
+- Docker
+- Railway
+- GitHub Actions (CI/CD)
 
-1. Push to `main` branch triggers the CI pipeline.
-2. After tests and Docker build, deployment is handled by Railway's GitHub integration.
+## 🚀 Workflow wdrożeniowy
 
-## Environment Configuration
+### CI: Integracja ciągła
+- Automatyczna instalacja zależności (`npm install`)
+- Uruchamianie testów (`npm test`)
+- Sprawdzenie jakości kodu (`npm run lint`)
+- Budowanie projektu (`npm run build`)
 
-- Environment variables and secrets should be configured in Railway dashboard.
-- Use `.env` or Railway secrets UI.
+### CD: Ciągłe wdrażanie
+- Automatyczne wdrożenie do Railway po przejściu CI
+- Użycie GitHub Secrets (`RAILWAY_TOKEN`)
+- Health check po wdrożeniu (komenda `curl`)
 
-## Health Check
+### ⚙️ Konfiguracja Railway
+- Sekret: `RAILWAY_TOKEN`
+- Zmienne środowiskowe:
+  - `NODE_ENV=production`
+  - `PORT=3000`
 
-- Application root `/` returns 200 OK if healthy.
+### 🔗 Link do produkcji
+[https://moj-projekt-production-e111.up.railway.app](https://moj-projekt-production-e111.up.railway.app)
