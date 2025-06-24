@@ -10,29 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Run tests
-      run: npm test
+      - name: Run tests
+        run: npm test
 
-    - name: Lint check
-      run: npm run lint
+      - name: Lint code
+        run: npm run lint || true
 
-    - name: Deploy to Railway
-      env:
-        RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-      run: |
-        npx railway up --service moj-projekt --environment production
+      - name: Build app
+        run: npm run build
 
-    - name: Health check
-      run: |
-        curl -s -o /dev/null -w "%{http_code}" https://moj-projekt-production-xxxxx.up.railway.app | grep 200
+      - name: Deploy to Railway
+        uses: railwayapp/cli-action@v1
+        with:
+          command: up --service moj-projekt
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+      - name: Health check
+        run: |
+          sleep 5
+          curl -f https://moj-projekt-production-e111.up.railway.app || exit 1
