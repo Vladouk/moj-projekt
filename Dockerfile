@@ -1,18 +1,11 @@
-# Вихідний образ
-FROM python:3.10-slim
+FROM node:18
 
-# Робоча директорія
 WORKDIR /app
 
-# Копіюємо залежності
-COPY Lab1-py/requirements.txt .
+COPY . .
 
-# Встановлюємо залежності
-RUN pip install --no-cache-dir -r requirements.txt
+RUN npm install
 
-# Копіюємо решту коду
-COPY Lab1-py/ .
+EXPOSE 8080
 
-# Стандартна команда (можеш змінити)
-CMD ["pytest"]
-
+CMD ["npm", "start"]
