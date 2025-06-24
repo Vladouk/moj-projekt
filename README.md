@@ -1,17 +1,15 @@
-# Mój Projekt
+# Railway Deployment with CI/CD
 
-## Opis projektu
-Ten projekt to przykładowa aplikacja HTML, której celem jest pokazanie podstaw działania Git, GitHub oraz struktury projektu.
+## Deployment Instructions
 
-## Instalacja
-Aby uruchomić projekt lokalnie:
+1. Push to `main` branch triggers the CI pipeline.
+2. After tests and Docker build, deployment is handled by Railway's GitHub integration.
 
-```bash
-git clone https://github.com/Vladouk/moj-projekt.git
-cd moj-projekt
+## Environment Configuration
 
-## Użycie
-Po sklonowaniu repozytorium, otwórz plik index.html w przeglądarce, aby zobaczyć stronę startową.
+- Environment variables and secrets should be configured in Railway dashboard.
+- Use `.env` or Railway secrets UI.
 
-## Licencja
-Ten projekt jest udostępniany na licencji MIT. Zobacz plik LICENSE, aby uzyskać więcej informacji.
+## Health Check
+
+- Application root `/` returns 200 OK if healthy.
